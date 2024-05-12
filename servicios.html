@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Estudio Magro | Servicios</title>
+    <link rel="stylesheet" href="controles/servicios.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <script src="controles/servicios.js" defer></script>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+  </head>
+  <body>
+    <div id="navbar-placeholder"></div>
+    <div class="wrapper">
+      <i id="left" class="fa-solid fa-angle-left"></i>
+      <ul class="carousel">
+        <li class="card">
+          <div class="img"><img src="images/img-1.jpg" alt="img" draggable="false"></div>
+          <h2>Casamientos</h2>
+          <span>Capturando Grandes Historias</span>
+        </li>
+        <li class="card">
+          <div class="img"><img src="images/img-2.jpg" alt="img" draggable="false"></div>
+          <h2>Eventos Familiares</h2>
+          <span>Reuniones inolvidables</span>
+        </li>
+        <li class="card">
+          <div class="img"><img src="images/img-3.jpg" alt="img" draggable="false"></div>
+          <h2>Eventos Escolares</h2>
+          <span>¡Celebremos el aprendizaje!</span>
+        </li>
+        <li class="card">
+          <div class="img"><img src="images/img-4.jpg" alt="img" draggable="false"></div>
+          <h2>Eventos Deportivos</h2>
+          <span>Tu espíritu competitivo</span>
+        </li>
+        <li class="card">
+          <div class="img"><img src="images/img-5.jpg" alt="img" draggable="false"></div>
+          <h2>Moda</h2>
+          <span>Estilo sin límites, moda sin fin.</span>
+        </li>
+        <li class="card">
+          <div class="img"><img src="images/img-6.jpg" alt="img" draggable="false"></div>
+          <h2>Ecommerce</h2>
+          <span>Impulsá tus ventas en línea!</span>
+        </li>
+      </ul>
+      <i id="right" class="fa-solid fa-angle-right"></i>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+            <!-- Enlace a jQuery para cargar dinámicamente el navbar -->
+            <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+            <!-- Script para cargar el navbar desde otro archivo -->
+            <script>
+                $(function () {
+                    $("#navbar-placeholder").load("controles/navbar.html");
+                });
+            </script>
+
+  </body>
+</html>
