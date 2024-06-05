@@ -13,10 +13,7 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <!-- Fonts google -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap">
-
-
 </head>
-
 <body>
     <header class="header">
         <!-- Logo de la página -->
@@ -37,10 +34,21 @@
         </nav>
     </header>
     <main>
-         <!-- Sección principal del contenido -->
-        <section>
-            <h1>Galeria</h1>
-        </section>        
-      </main>
+        <!-- Sección principal del contenido -->
+        <section class="container">
+            <div class="slider-wrapper">
+                <div class="slider">
+                    <img id="slide-1" src="/config/img/1.jpg" alt="3D rendering of an imaginary orange planet in space" />
+                    <img id="slide-2" src="/config/img/2.jpg" alt="3D rendering of an imaginary green planet in space" />
+                    <img id="slide-3" src="/config/img/3.jpg" alt="3D rendering of an imaginary blue planet in space" />
+                </div>
+                <div class="slider-nav">
+                    <a href="#slide-1"></a>
+                    <a href="#slide-2"></a>
+                    <a href="#slide-3"></a>
+                </div>
+            </div>
+        </section>
+    </main>
 </body>
 </html>
