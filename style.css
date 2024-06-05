@@ -1,0 +1,269 @@
+/* Variables de colores */
+:root {
+  --color-blanco: #fff;
+  --color-transparente-negro: rgba(0, 0, 0, 0.1);
+  --color-hover-transicion: 0.5s;
+  --color-gris: #706c6c;
+  --color-azul: #3866f2;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  min-height: 100vh;
+  background: url(/config/img/background.jpg) no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: var(--color-blanco);
+}
+
+h1, h2 {
+  color: var(--color-blanco);
+}
+
+/* NAVBAR */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1.3rem 10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+}
+
+.header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--color-transparente-negro);
+  backdrop-filter: blur(50px);
+  z-index: -1;
+}
+
+.logo {
+  font-size: 2rem;
+  color: var(--color-blanco);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+#check {
+  display: none;
+}
+
+.navbar a {
+  font-size: 1.15rem;
+  color: var(--color-blanco);
+  text-decoration: none;
+  font-weight: 500;
+  margin-left: 2.5rem;
+}
+
+.navbar a:hover {
+  text-decoration: underline;
+  transition: var(--color-hover-transicion);
+}
+
+.iconos {
+  position: absolute;
+  right: 5%;
+  font-size: 2.8rem;
+  color: var(--color-blanco);
+  cursor: pointer;
+  display: none;
+}
+
+/* Main content */
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 80px); /* Altura mínima considerando el navbar */
+  padding-top: 80px; /* Espacio para el navbar fijo */
+  text-align: center;
+}
+/* Formulario */
+.form {
+  background-color: var(--color-transparente-negro);
+  backdrop-filter: blur(50px);
+  margin: auto;
+  width: 90%;
+  max-width: 400px;
+  padding: 4.5em 3em;
+  border-radius: 10px;
+  box-shadow: 0 5px 10px -5px rgb(0, 0, 0 / 30%);
+  text-align: center;
+}
+.form_titulo {
+  font-size: 2rem;
+  margin-bottom: .5em;
+}
+.form_texto {
+  font-weight: 300;
+}
+.form_contenedor {
+  margin-top: 3em;
+  display: grid;
+  gap: 2.5em;
+}
+.form_grupo{
+  position: relative;
+  color: var(--color-blanco);
+}
+.form_input{
+  width: 100%;
+  background: none;
+  color: var(--color-gris);
+  font-size: 1rem;
+  padding: .6em .3em;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid var(--color-blanco);
+  font-family: "Poppins", sans-serif;
+}
+.form_input[type="file"] {
+  padding: 0.4em 0;
+  color: var(--color-blanco);
+}
+.form_input:not(:placeholder-shown){
+  color: var(--color-blanco);
+}
+.form_input:focus + .form_label, .form_input:not(:placeholder-shown) + .form_label{
+  transform: translateY(-12px) scale(.7);
+  transform-origin: left top;
+  color: var(--color-azul);
+}
+.form_label{
+  color: var(--color-blanco);
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 5px;
+  transform: translateY(10px);
+  transition: transform .5s, var(--color-blanco) .3s;
+}
+.form_grupo_checkbox {
+  display: flex;
+  align-items: center;
+}
+.form_input_checkbox {
+  margin-right: 10px;
+}
+.form_label_checkbox {
+  position: static;
+  transform: none;
+  transition: none;
+  cursor: pointer;
+}
+.form_enviar{
+  background: var(--color-gris);
+  color: var(--color-blanco);
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-size: 1.2rem;
+  padding: .8em 0;
+  border: none;
+  border-radius: .5em;
+  cursor: pointer;
+}
+.form_line{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: var(--color-gris);
+  transform: scale(0);
+  transform: left bottom;
+  transition: transform .4s;
+}
+.form_input:focus ~ .form_line, .form_input:not(:placeholder-shown) ~ .form_line{
+  transform: scale(1);
+}
+/* MSG ERROR */
+.error-message {
+  display: none;
+  color: red;
+  margin-bottom: 10px;
+}
+/* Slide */
+
+
+/* Responsive design */
+@media (max-width: 992px) {
+  .header {
+    padding: 1.3rem 5%;
+  }
+
+  main {
+    padding-top: 80px; /* Ajustar según la altura del navbar */
+  }
+}
+
+@media (max-width: 768px) {
+  .iconos {
+    display: inline-flex;
+  }
+
+  #check:checked ~ .iconos #icono-menu {
+    display: none;
+  }
+
+  .iconos #icono-cerrar {
+    display: none;
+  }
+
+  #check:checked ~ .iconos #icono-cerrar {
+    display: block;
+  }
+
+  .navbar {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background: var(--color-transparente-negro);
+    backdrop-filter: blur(50px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    transition: 0.3s ease;
+    overflow: hidden;
+  }
+
+  #check:checked ~ .navbar {
+    height: 17.7rem;
+  }
+
+  .navbar a {
+    display: block;
+    font-size: 1.1rem;
+    margin: 1.5rem 0;
+    text-align: center;
+    transform: translateY(-50px);
+    opacity: 0;
+    transition: 0.3s ease;
+  }
+
+  #check:checked ~ .navbar a {
+    transform: translateY(0);
+    opacity: 1;
+    transition-delay: calc(0.15s * var(--i));
+  }
+}
+@media (max-width:425px) {
+  .form_titulo{
+    font-size: 1.8rem;
+  }
+}
